@@ -88,4 +88,4 @@ def fetch_food_companies():
 if __name__ == "__main__":
     df = fetch_food_companies()
     if df is not None:
-        log_loading(df, "Scraper Result")
+        log_loading("Scraper Result Complete.")

@@ -110,4 +110,4 @@ def process_and_add_numeric(input_csv=INPUT_FILE, output_csv=OUTPUT_FILE):
 if __name__ == "__main__":
     df = process_and_add_numeric()
     if df is not None:
-        log_loading(df, "Add Numeric Result")
+        log_loading("Add Numeric Result Complete.")

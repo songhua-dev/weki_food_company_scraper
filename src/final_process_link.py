@@ -112,4 +112,4 @@ def final_enrich():
 if __name__ == "__main__":
     df = final_enrich()
     if df is not None:
-        log_loading(df, "Final Enrich Result")
+        log_loading("Final Enrich Result Complete.")

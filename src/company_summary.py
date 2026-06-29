@@ -89,4 +89,4 @@ def process_and_add_summary(input_csv=FILE_LINKED, output_csv=FILE_FINAL):
 if __name__ == "__main__":
     df = process_and_add_summary(FILE_LINKED, FILE_FINAL)
     if df is not None:
-        log_loading(df, "Company Summary Result")
+        log_loading("Company Summary Result Complete.")

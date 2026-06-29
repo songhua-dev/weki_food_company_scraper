@@ -4,7 +4,6 @@ from src import final_process_link
 from src import company_summary
 from src import get_infobox_simple
 from src import get_infobox_numeric
-from src.utils_logger import log_loading
 import os
 
 # Workflow flags
@@ -21,6 +20,7 @@ DATA_DIR = os.path.join(BASE_DIR, 'data')
 
 def cleanup_intermediate_files():
     files = [
+        os.path.join(DATA_DIR, 'food_companies.csv'),    
         os.path.join(DATA_DIR, 'food_companies_with_sites.csv'),
         os.path.join(DATA_DIR, 'food_companies_with_sites_final.csv'),
         os.path.join(DATA_DIR, 'food_companies_with_summary.csv'),
@@ -69,4 +69,5 @@ def run_pipeline():
 
 
 if __name__ == "__main__":
+
     run_pipeline()

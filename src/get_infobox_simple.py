@@ -102,9 +102,9 @@ def process_and_add_infobox(input_csv=INPUT_FILE, output_csv=OUTPUT_FILE):
 
         founded_year, headquarters, products = fetch_infobox_data(row['wiki_url'])
 
-        df.at[index, 'founded_year'] = founded_year if founded_year is not None else 'N/A'
-        df.at[index, 'headquarters'] = headquarters if headquarters is not None else 'N/A'
-        df.at[index, 'products'] = products if products is not None else 'N/A'
+        df.at[index, 'founded_year'] = founded_year
+        df.at[index, 'headquarters'] = headquarters
+        df.at[index, 'products'] = products
 
         if any([founded_year, headquarters, products]):
             success_count += 1
@@ -123,4 +123,4 @@ def process_and_add_infobox(input_csv=INPUT_FILE, output_csv=OUTPUT_FILE):
 if __name__ == "__main__":
     df = process_and_add_infobox()
     if df is not None:
-        log_loading(df, "Add Infobox Result")
+        log_message("Add Infobox Result completed.")

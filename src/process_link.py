@@ -98,4 +98,4 @@ def process_links():
 if __name__ == "__main__":
     df = process_links() 
     if df is not None:
-        log_loading(df, "Process Link Result")
+        log_loading("Process Link Result Complete.")
