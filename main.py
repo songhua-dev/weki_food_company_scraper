@@ -1,10 +1,10 @@
-import scraper
-import process_link
-import final_process_link
-import company_summary
-import get_infobox_simple
-import get_infobox_numeric
-from utils_logger import print_data_summary
+from src import scraper
+from src import process_link
+from src import final_process_link
+from src import company_summary
+from src import get_infobox_simple
+from src import get_infobox_numeric
+from src.utils_logger import print_data_summary
 import os
 
 # Workflow flags
@@ -14,16 +14,17 @@ SKIP_FINAL_PROCESS_LINK = False
 SKIP_SUMMARY = False
 SKIP_INFOBOX = False
 SKIP_NUMERIC = False
-SKIP_CLEANUP = True
+SKIP_CLEANUP = False
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE_DIR, 'data')
 
 def cleanup_intermediate_files():
     files = [
-        os.path.join(BASE_DIR, 'food_companies_with_sites.csv'),
-        os.path.join(BASE_DIR, 'food_companies_with_sites_final.csv'),
-        os.path.join(BASE_DIR, 'food_companies_with_summary.csv'),
-        os.path.join(BASE_DIR, 'food_companies_with_infobox.csv'),
+        os.path.join(DATA_DIR, 'food_companies_with_sites.csv'),
+        os.path.join(DATA_DIR, 'food_companies_with_sites_final.csv'),
+        os.path.join(DATA_DIR, 'food_companies_with_summary.csv'),
+        os.path.join(DATA_DIR, 'food_companies_with_infobox.csv'),
     ]
     for f in files:
         if os.path.exists(f):

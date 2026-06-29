@@ -1,9 +1,10 @@
 import os
 import datetime
 
-# 統一設定路徑，確保不論在哪個模組呼叫，log 都會寫入專案目錄
-BASE_DIR = r'C:\Python\python_project\P2_food_scraper'
-LOG_PATH = os.path.join(BASE_DIR, "process.log")
+SRC_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(SRC_DIR)
+DATA_DIR = os.path.join(BASE_DIR, 'data')
+LOG_PATH = os.path.join(DATA_DIR, "process.log")
 
 def log_message(message):
     """記錄訊息到 console 並寫入 process.log"""

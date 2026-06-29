@@ -7,9 +7,11 @@ import time
 from utils_logger import log_message, print_data_summary
 
 # File path configuration
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-INPUT_FILE = os.path.join(BASE_DIR, 'food_companies_with_infobox.csv')
-OUTPUT_FILE = os.path.join(BASE_DIR, 'food_companies_final.csv')
+SRC_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(SRC_DIR)
+DATA_DIR = os.path.join(BASE_DIR, 'data')
+INPUT_FILE = os.path.join(DATA_DIR, 'food_companies_with_infobox.csv')
+OUTPUT_FILE = os.path.join(DATA_DIR, 'food_companies_final.csv')
 
 EMPLOYEES_KEYS = ['Employees', 'employees', 'Number of employees', 'Staff']
 REVENUE_KEYS = ['Revenue', 'revenue']
