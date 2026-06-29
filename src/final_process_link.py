@@ -4,7 +4,7 @@ import os
 import requests
 from bs4 import BeautifulSoup
 import re
-from utils_logger import log_message, print_data_summary
+from src.utils_logger import log_message, print_data_summary
 
 # File paths configuration
 SRC_DIR = os.path.dirname(os.path.abspath(__file__))

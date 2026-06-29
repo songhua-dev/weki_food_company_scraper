@@ -1,0 +1,9 @@
+[2026-06-29 11:08:59] Starting scrape process from Wikipedia...
+[2026-06-29 11:09:00] Process complete. Scraped 1278 records.
+[2026-06-29 11:09:00] Data saved to c:\Python\python_project\weki_food_company_scraper\data\food_companies.csv
+[2026-06-29 11:09:00] ==================================================
+[2026-06-29 11:09:00] Loading existing progress: c:\Python\python_project\weki_food_company_scraper\data\food_companies_with_sites.csv
+[2026-06-29 11:09:00] Resuming: 490 rows still pending.
+[2026-06-29 11:09:00] Starting crawl for 1278 companies...
+[2026-06-29 11:09:28] Progress saved at index 40
+[2026-06-29 11:10:27] Progress saved at index 100

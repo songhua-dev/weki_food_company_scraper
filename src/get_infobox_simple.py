@@ -4,7 +4,7 @@ import pandas as pd
 import re
 import os
 import time
-from utils_logger import log_message, print_data_summary
+from src.utils_logger import log_message, print_data_summary
 
 # File path configuration
 SRC_DIR = os.path.dirname(os.path.abspath(__file__))
