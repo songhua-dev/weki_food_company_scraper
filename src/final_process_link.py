@@ -4,7 +4,7 @@ import os
 import requests
 from bs4 import BeautifulSoup
 import re
-from src.utils_logger import log_message, print_data_summary
+from src.utils_logger import log_message, log_loading
 
 # File paths configuration
 SRC_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -112,4 +112,4 @@ def final_enrich():
 if __name__ == "__main__":
     df = final_enrich()
     if df is not None:
-        print_data_summary(df, "Final Enrich Result")
+        log_loading(df, "Final Enrich Result")

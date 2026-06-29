@@ -4,7 +4,7 @@ from src import final_process_link
 from src import company_summary
 from src import get_infobox_simple
 from src import get_infobox_numeric
-from src.utils_logger import print_data_summary
+from src.utils_logger import log_loading
 import os
 
 # Workflow flags

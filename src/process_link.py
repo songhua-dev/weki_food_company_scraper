@@ -4,7 +4,7 @@ import os
 import requests
 from bs4 import BeautifulSoup
 import re
-from src.utils_logger import log_message, print_data_summary
+from src.utils_logger import log_message, log_loading
 
 # File paths configuration
 SRC_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -98,4 +98,4 @@ def process_links():
 if __name__ == "__main__":
     df = process_links() 
     if df is not None:
-        print_data_summary(df, "Process Link Result")
+        log_loading(df, "Process Link Result")

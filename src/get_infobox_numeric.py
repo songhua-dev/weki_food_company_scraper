@@ -4,7 +4,7 @@ import pandas as pd
 import re
 import os
 import time
-from src.utils_logger import log_message, print_data_summary
+from src.utils_logger import log_message, log_loading
 
 # File path configuration
 SRC_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -110,4 +110,4 @@ def process_and_add_numeric(input_csv=INPUT_FILE, output_csv=OUTPUT_FILE):
 if __name__ == "__main__":
     df = process_and_add_numeric()
     if df is not None:
-        print_data_summary(df, "Add Numeric Result")
+        log_loading(df, "Add Numeric Result")

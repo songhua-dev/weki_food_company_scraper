@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import os
-from src.utils_logger import log_message, print_data_summary
+from src.utils_logger import log_message, log_loading
 
 # File path configuration
 SRC_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -88,4 +88,4 @@ def fetch_food_companies():
 if __name__ == "__main__":
     df = fetch_food_companies()
     if df is not None:
-        print_data_summary(df, "Scraper Result")
+        log_loading(df, "Scraper Result")

@@ -4,7 +4,7 @@ import pandas as pd
 import re
 import os
 import time
-from src.utils_logger import log_message, print_data_summary
+from src.utils_logger import log_message, log_loading
 
 # File path configuration
 SRC_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -89,4 +89,4 @@ def process_and_add_summary(input_csv=FILE_LINKED, output_csv=FILE_FINAL):
 if __name__ == "__main__":
     df = process_and_add_summary(FILE_LINKED, FILE_FINAL)
     if df is not None:
-        print_data_summary(df, "Company Summary Result")
+        log_loading(df, "Company Summary Result")
