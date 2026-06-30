@@ -28,4 +28,4 @@ python main.py
 *This solution is highly customizable and can be tailored to meet your specific data extraction requirements. For inquiries regarding custom automation projects, feel free to reach out.*
 ## Data Output Preview
 Our scraper delivers clean, structured, and business-ready datasets. You can review the output format by accessing the file below:
-[View Full Dataset Sample](./Data/food_companies_final.csv)
+[View Full Dataset Sample](./data/food_companies_final.csv)
