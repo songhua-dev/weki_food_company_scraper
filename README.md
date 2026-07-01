@@ -1,31 +1,47 @@
-# Automated Company Data Intelligence Scraper
-A robust and scalable automation solution designed to extract, clean, and structure high-value company information from complex web sources. This tool transforms unstructured online data into clean, business-ready CSV formats, empowering data-driven decision-making.
-## Key Capabilities
-- **Automated Data Gathering:** Streamlines the process of extracting critical company details, eliminating the need for manual copy-pasting.
-- **Structured Data Output:** Automatically processes and exports data into organized CSV files, ready for Excel, Google Sheets, or CRM integration.
-- **Robust Parsing Engine:** Built with a flexible extraction logic that remains stable even when navigating intricate website architectures, ensuring data integrity.
-- **Highly Efficient:** Lightweight architecture that prioritizes speed and reliability, minimizing resource consumption.
-## How This Benefits Your Business
-- **Scalability:** Whether you need to collect data from a few companies or thousands, this automation handles the workload consistently.
-- **Accuracy:** Minimizes human error in data entry, ensuring that your business intelligence is based on clean and reliable data.
-- **Time-Saving:** Reclaims valuable operational hours by automating repetitive research tasks, allowing your team to focus on strategic analysis.
-## Technology Stack
-The project is built using industry-standard Python libraries for high-performance data processing:
-- **Python:** The core language for stable and maintainable automation.
-- **BeautifulSoup4:** Advanced HTML parsing to extract specific data points without relying on restrictive API limitations.
-- **Pandas:** Robust data manipulation for cleaning and structuring the extracted information.
-## Getting Started
-This scraper is designed to be easily executable.
-1. **Environment Setup:** Ensure Python is installed on your system.
-2. **Installation:** Install the necessary dependencies using the provided requirements file:
+# Company Data Extraction Pipeline
+
+Extracts and structures company information (name, country, official website, 
+business summary) from Wikipedia's List of Global Food Companies, with a 
+gap-filling enrichment stage for incomplete entries.
+
+## Highlights
+
+- **Infobox-first extraction**: prioritizes structured Wikipedia infobox data 
+  over free-text parsing, improving accuracy on inconsistent page layouts.
+- **Two-tier confidence tracking**: confirmed websites are extracted directly 
+  from Wikipedia infoboxes; unconfirmed candidates are flagged separately 
+  rather than merged, avoiding false positives in the final dataset.
+- **Precision-over-recall enrichment**: a secondary pass (`retry_enrich_data.py`) 
+  fills gaps in the first pass using targeted noise-removal rules and a domain 
+  blocklist — entries that can't be confidently resolved are flagged for 
+  manual review rather than filled with low-confidence guesses.
+- **Clean CSV output**: ready for direct use in Excel, Sheets, or CRM import.
+
+## Tech Stack
+
+Python · requests · BeautifulSoup4 · pandas
+
+## Setup
+
 ```bash
 pip install -r requirements.txt
-```
-3. **Execution:** Simply run the main pipeline script to initiate the data extraction process:
-```bash
 python main.py
 ```
-*This solution is highly customizable and can be tailored to meet your specific data extraction requirements. For inquiries regarding custom automation projects, feel free to reach out.*
-## Data Output Preview
-Our scraper delivers clean, structured, and business-ready datasets. You can review the output format by accessing the file below:
-[View Full Dataset Sample](./data/food_companies_final.csv)
+
+## Sample Output
+
+| Company | Country | Website | Status | Summary |
+|---|---|---|---|---|
+| Ganong Bros. | Canada | http://www.ganong.com/ | Confirmed | Canadian chocolate and confectionery company founded 1873, the oldest company in its industry in Canada. |
+| Earth's Own Food Company | Canada | *(unconfirmed — see possible_official_sites)* | Potential | Vegan food company and Canada's largest soy beverage company, based in Burnaby. |
+| Gay Lea | Canada | *(not found — flagged for manual check)* | Manual Check Required | Dairy products co-operative producing butter, sour cream, cottage cheese and more. |
+| McCain Foods | Canada | http://www.mccain.ca | Confirmed | World's largest manufacturer of frozen potato products, founded 1957. |
+
+Out of 1,278 companies processed: **61.7% Confirmed**, 20.3% Potential, 
+18.0% flagged for Manual Check — full breakdown reflects Wikipedia's own data 
+completeness rather than extraction failures.
+
+Full dataset: [`data/food_companies_final.csv`](./data/food_companies_final.csv)
+
+---
+Open to custom data extraction projects — feel free to reach out.
